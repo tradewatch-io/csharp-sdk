@@ -50,14 +50,18 @@ namespace Tradewatch.Model
         /// <summary>
         /// Gets or Sets Timestamp
         /// </summary>
-        /// <example>1704882030</example>
+        /*
+        <example>1704882030</example>
+        */
         [DataMember(Name = "timestamp", IsRequired = true, EmitDefaultValue = true)]
         public int Timestamp { get; set; }
 
         /// <summary>
         /// Gets or Sets Rate
         /// </summary>
-        /// <example>1.23456</example>
+        /*
+        <example>1.23456</example>
+        */
         [DataMember(Name = "rate", IsRequired = true, EmitDefaultValue = true)]
         public decimal Rate { get; set; }
 

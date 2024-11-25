@@ -69,7 +69,9 @@ namespace Tradewatch.Model
         /// The ask price.
         /// </summary>
         /// <value>The ask price.</value>
-        /// <example>1.23456</example>
+        /*
+        <example>1.23456</example>
+        */
         [DataMember(Name = "ask", IsRequired = true, EmitDefaultValue = true)]
         public decimal Ask { get; set; }
 
@@ -77,7 +79,9 @@ namespace Tradewatch.Model
         /// The bid price.
         /// </summary>
         /// <value>The bid price.</value>
-        /// <example>1.23456</example>
+        /*
+        <example>1.23456</example>
+        */
         [DataMember(Name = "bid", IsRequired = true, EmitDefaultValue = true)]
         public decimal Bid { get; set; }
 
@@ -85,14 +89,18 @@ namespace Tradewatch.Model
         /// The mid price.
         /// </summary>
         /// <value>The mid price.</value>
-        /// <example>1.23456</example>
+        /*
+        <example>1.23456</example>
+        */
         [DataMember(Name = "mid", IsRequired = true, EmitDefaultValue = true)]
         public decimal Mid { get; set; }
 
         /// <summary>
         /// Gets or Sets Timestamp
         /// </summary>
-        /// <example>1704882030</example>
+        /*
+        <example>1704882030</example>
+        */
         [DataMember(Name = "timestamp", IsRequired = true, EmitDefaultValue = true)]
         public int Timestamp { get; set; }
 
