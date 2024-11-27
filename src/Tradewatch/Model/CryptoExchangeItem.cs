@@ -42,7 +42,9 @@ namespace Tradewatch.Model
         /// <param name="id">Exchange identifier (required).</param>
         /// <param name="name">Exchange name (required).</param>
         /// <param name="yearEstablished">Exchange established year (required).</param>
-        public CryptoExchangeItem(string id = default(string), string name = default(string), int yearEstablished = default(int))
+        /// <param name="country">Exchange country (required).</param>
+        /// <param name="website">Exchange website URL (required).</param>
+        public CryptoExchangeItem(string id = default(string), string name = default(string), int yearEstablished = default(int), string country = default(string), string website = default(string))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -57,6 +59,18 @@ namespace Tradewatch.Model
             }
             this.Name = name;
             this.YearEstablished = yearEstablished;
+            // to ensure "country" is required (not null)
+            if (country == null)
+            {
+                throw new ArgumentNullException("country is a required property for CryptoExchangeItem and cannot be null");
+            }
+            this.Country = country;
+            // to ensure "website" is required (not null)
+            if (website == null)
+            {
+                throw new ArgumentNullException("website is a required property for CryptoExchangeItem and cannot be null");
+            }
+            this.Website = website;
         }
 
         /// <summary>
@@ -81,6 +95,20 @@ namespace Tradewatch.Model
         public int YearEstablished { get; set; }
 
         /// <summary>
+        /// Exchange country
+        /// </summary>
+        /// <value>Exchange country</value>
+        [DataMember(Name = "country", IsRequired = true, EmitDefaultValue = true)]
+        public string Country { get; set; }
+
+        /// <summary>
+        /// Exchange website URL
+        /// </summary>
+        /// <value>Exchange website URL</value>
+        [DataMember(Name = "website", IsRequired = true, EmitDefaultValue = true)]
+        public string Website { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -91,6 +119,8 @@ namespace Tradewatch.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  YearEstablished: ").Append(YearEstablished).Append("\n");
+            sb.Append("  Country: ").Append(Country).Append("\n");
+            sb.Append("  Website: ").Append(Website).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

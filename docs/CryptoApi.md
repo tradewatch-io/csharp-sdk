@@ -4,105 +4,10 @@ All URIs are relative to *https://api.tradewatch.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CryptoGetExchanges**](CryptoApi.md#cryptogetexchanges) | **GET** /crypto/exchanges | Available Exchanges |
 | [**convert**](CryptoApi.md#convert) | **GET** /crypto/convert/{from}/{to} | Conversion |
+| [**getExchanges**](CryptoApi.md#getexchanges) | **GET** /crypto/exchanges | Available Exchanges |
 | [**getQuote**](CryptoApi.md#getquote) | **GET** /crypto/symbols/{symbol} | Last Quote |
 | [**getSymbols**](CryptoApi.md#getsymbols) | **GET** /crypto/symbols | Available Symbols |
-
-<a id="cryptogetexchanges"></a>
-# **CryptoGetExchanges**
-> CryptoExchangesList CryptoGetExchanges ()
-
-Available Exchanges
-
-Get list of available cryptocurrency exchanges
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Tradewatch.Api;
-using Tradewatch.Client;
-using Tradewatch.Model;
-
-namespace Example
-{
-    public class CryptoGetExchangesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.tradewatch.io";
-            // Configure API key authorization: api_key_query
-            config.AddApiKey("api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("api-key", "Bearer");
-            // Configure API key authorization: api_key_header
-            config.AddApiKey("api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("api-key", "Bearer");
-
-            var apiInstance = new CryptoApi(config);
-
-            try
-            {
-                // Available Exchanges
-                CryptoExchangesList result = apiInstance.CryptoGetExchanges();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling CryptoApi.CryptoGetExchanges: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the CryptoGetExchangesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Available Exchanges
-    ApiResponse<CryptoExchangesList> response = apiInstance.CryptoGetExchangesWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling CryptoApi.CryptoGetExchangesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-### Return type
-
-[**CryptoExchangesList**](CryptoExchangesList.md)
-
-### Authorization
-
-[api_key_query](../README.md#api_key_query), [api_key_header](../README.md#api_key_header)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="convert"></a>
 # **convert**
@@ -204,6 +109,101 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getexchanges"></a>
+# **getExchanges**
+> CryptoExchangesList getExchanges ()
+
+Available Exchanges
+
+Get list of available cryptocurrency exchanges
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Tradewatch.Api;
+using Tradewatch.Client;
+using Tradewatch.Model;
+
+namespace Example
+{
+    public class getExchangesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.tradewatch.io";
+            // Configure API key authorization: api_key_query
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: api_key_header
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+
+            var apiInstance = new CryptoApi(config);
+
+            try
+            {
+                // Available Exchanges
+                CryptoExchangesList result = apiInstance.getExchanges();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CryptoApi.getExchanges: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the getExchangesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Available Exchanges
+    ApiResponse<CryptoExchangesList> response = apiInstance.getExchangesWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CryptoApi.getExchangesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**CryptoExchangesList**](CryptoExchangesList.md)
+
+### Authorization
+
+[api_key_query](../README.md#api_key_query), [api_key_header](../README.md#api_key_header)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
