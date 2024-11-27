@@ -80,5 +80,23 @@ namespace Tradewatch.Test.Model
         {
             // TODO unit test for the property 'YearEstablished'
         }
+
+        /// <summary>
+        /// Test the property 'Country'
+        /// </summary>
+        [Fact]
+        public void CountryTest()
+        {
+            // TODO unit test for the property 'Country'
+        }
+
+        /// <summary>
+        /// Test the property 'Website'
+        /// </summary>
+        [Fact]
+        public void WebsiteTest()
+        {
+            // TODO unit test for the property 'Website'
+        }
     }
 }

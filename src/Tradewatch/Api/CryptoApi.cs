@@ -27,27 +27,6 @@ namespace Tradewatch.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Available Exchanges
-        /// </summary>
-        /// <remarks>
-        /// Get list of available cryptocurrency exchanges
-        /// </remarks>
-        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CryptoExchangesList</returns>
-        CryptoExchangesList CryptoGetExchanges(int operationIndex = 0);
-
-        /// <summary>
-        /// Available Exchanges
-        /// </summary>
-        /// <remarks>
-        /// Get list of available cryptocurrency exchanges
-        /// </remarks>
-        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CryptoExchangesList</returns>
-        ApiResponse<CryptoExchangesList> CryptoGetExchangesWithHttpInfo(int operationIndex = 0);
-        /// <summary>
         /// Conversion
         /// </summary>
         /// <remarks>
@@ -72,6 +51,27 @@ namespace Tradewatch.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CryptoConversion</returns>
         ApiResponse<CryptoConversion> convertWithHttpInfo(string from, string to, int operationIndex = 0);
+        /// <summary>
+        /// Available Exchanges
+        /// </summary>
+        /// <remarks>
+        /// Get list of available cryptocurrency exchanges
+        /// </remarks>
+        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CryptoExchangesList</returns>
+        CryptoExchangesList getExchanges(int operationIndex = 0);
+
+        /// <summary>
+        /// Available Exchanges
+        /// </summary>
+        /// <remarks>
+        /// Get list of available cryptocurrency exchanges
+        /// </remarks>
+        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CryptoExchangesList</returns>
+        ApiResponse<CryptoExchangesList> getExchangesWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// Last Quote
         /// </summary>
@@ -136,29 +136,6 @@ namespace Tradewatch.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Available Exchanges
-        /// </summary>
-        /// <remarks>
-        /// Get list of available cryptocurrency exchanges
-        /// </remarks>
-        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CryptoExchangesList</returns>
-        System.Threading.Tasks.Task<CryptoExchangesList> CryptoGetExchangesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Available Exchanges
-        /// </summary>
-        /// <remarks>
-        /// Get list of available cryptocurrency exchanges
-        /// </remarks>
-        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CryptoExchangesList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CryptoExchangesList>> CryptoGetExchangesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-        /// <summary>
         /// Conversion
         /// </summary>
         /// <remarks>
@@ -185,6 +162,29 @@ namespace Tradewatch.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CryptoConversion)</returns>
         System.Threading.Tasks.Task<ApiResponse<CryptoConversion>> convertWithHttpInfoAsync(string from, string to, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Available Exchanges
+        /// </summary>
+        /// <remarks>
+        /// Get list of available cryptocurrency exchanges
+        /// </remarks>
+        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CryptoExchangesList</returns>
+        System.Threading.Tasks.Task<CryptoExchangesList> getExchangesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Available Exchanges
+        /// </summary>
+        /// <remarks>
+        /// Get list of available cryptocurrency exchanges
+        /// </remarks>
+        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CryptoExchangesList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CryptoExchangesList>> getExchangesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Last Quote
         /// </summary>
@@ -364,152 +364,6 @@ namespace Tradewatch.Api
         }
 
         /// <summary>
-        /// Available Exchanges Get list of available cryptocurrency exchanges
-        /// </summary>
-        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>CryptoExchangesList</returns>
-        public CryptoExchangesList CryptoGetExchanges(int operationIndex = 0)
-        {
-            Tradewatch.Client.ApiResponse<CryptoExchangesList> localVarResponse = CryptoGetExchangesWithHttpInfo();
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Available Exchanges Get list of available cryptocurrency exchanges
-        /// </summary>
-        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of CryptoExchangesList</returns>
-        public Tradewatch.Client.ApiResponse<CryptoExchangesList> CryptoGetExchangesWithHttpInfo(int operationIndex = 0)
-        {
-            Tradewatch.Client.RequestOptions localVarRequestOptions = new Tradewatch.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Tradewatch.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Tradewatch.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "CryptoApi.CryptoGetExchanges";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (api_key_query) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Tradewatch.Client.ClientUtils.ParameterToMultiMap("", "api-key", this.Configuration.GetApiKeyWithPrefix("api-key")));
-            }
-            // authentication (api_key_header) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("api-key", this.Configuration.GetApiKeyWithPrefix("api-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<CryptoExchangesList>("/crypto/exchanges", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("CryptoGetExchanges", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Available Exchanges Get list of available cryptocurrency exchanges
-        /// </summary>
-        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of CryptoExchangesList</returns>
-        public async System.Threading.Tasks.Task<CryptoExchangesList> CryptoGetExchangesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-            Tradewatch.Client.ApiResponse<CryptoExchangesList> localVarResponse = await CryptoGetExchangesWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Available Exchanges Get list of available cryptocurrency exchanges
-        /// </summary>
-        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (CryptoExchangesList)</returns>
-        public async System.Threading.Tasks.Task<Tradewatch.Client.ApiResponse<CryptoExchangesList>> CryptoGetExchangesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-        {
-
-            Tradewatch.Client.RequestOptions localVarRequestOptions = new Tradewatch.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Tradewatch.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Tradewatch.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-
-            localVarRequestOptions.Operation = "CryptoApi.CryptoGetExchanges";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (api_key_query) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Tradewatch.Client.ClientUtils.ParameterToMultiMap("", "api-key", this.Configuration.GetApiKeyWithPrefix("api-key")));
-            }
-            // authentication (api_key_header) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("api-key", this.Configuration.GetApiKeyWithPrefix("api-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<CryptoExchangesList>("/crypto/exchanges", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("CryptoGetExchanges", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
         /// Conversion Convert one symbol to another
         /// </summary>
         /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
@@ -682,6 +536,152 @@ namespace Tradewatch.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("convert", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Available Exchanges Get list of available cryptocurrency exchanges
+        /// </summary>
+        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CryptoExchangesList</returns>
+        public CryptoExchangesList getExchanges(int operationIndex = 0)
+        {
+            Tradewatch.Client.ApiResponse<CryptoExchangesList> localVarResponse = getExchangesWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Available Exchanges Get list of available cryptocurrency exchanges
+        /// </summary>
+        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CryptoExchangesList</returns>
+        public Tradewatch.Client.ApiResponse<CryptoExchangesList> getExchangesWithHttpInfo(int operationIndex = 0)
+        {
+            Tradewatch.Client.RequestOptions localVarRequestOptions = new Tradewatch.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Tradewatch.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Tradewatch.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "CryptoApi.getExchanges";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (api_key_query) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
+            {
+                localVarRequestOptions.QueryParameters.Add(Tradewatch.Client.ClientUtils.ParameterToMultiMap("", "api-key", this.Configuration.GetApiKeyWithPrefix("api-key")));
+            }
+            // authentication (api_key_header) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("api-key", this.Configuration.GetApiKeyWithPrefix("api-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<CryptoExchangesList>("/crypto/exchanges", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("getExchanges", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Available Exchanges Get list of available cryptocurrency exchanges
+        /// </summary>
+        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CryptoExchangesList</returns>
+        public async System.Threading.Tasks.Task<CryptoExchangesList> getExchangesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Tradewatch.Client.ApiResponse<CryptoExchangesList> localVarResponse = await getExchangesWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Available Exchanges Get list of available cryptocurrency exchanges
+        /// </summary>
+        /// <exception cref="Tradewatch.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CryptoExchangesList)</returns>
+        public async System.Threading.Tasks.Task<Tradewatch.Client.ApiResponse<CryptoExchangesList>> getExchangesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            Tradewatch.Client.RequestOptions localVarRequestOptions = new Tradewatch.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Tradewatch.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Tradewatch.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "CryptoApi.getExchanges";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (api_key_query) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
+            {
+                localVarRequestOptions.QueryParameters.Add(Tradewatch.Client.ClientUtils.ParameterToMultiMap("", "api-key", this.Configuration.GetApiKeyWithPrefix("api-key")));
+            }
+            // authentication (api_key_header) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("api-key", this.Configuration.GetApiKeyWithPrefix("api-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<CryptoExchangesList>("/crypto/exchanges", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("getExchanges", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
