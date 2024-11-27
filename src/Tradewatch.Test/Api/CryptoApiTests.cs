@@ -55,6 +55,17 @@ namespace Tradewatch.Test.Api
         }
 
         /// <summary>
+        /// Test CryptoGetExchanges
+        /// </summary>
+        [Fact]
+        public void CryptoGetExchangesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.CryptoGetExchanges();
+            //Assert.IsType<CryptoExchangesList>(response);
+        }
+
+        /// <summary>
         /// Test convert
         /// </summary>
         [Fact]
